@@ -1,39 +1,28 @@
-<style>
-    header {
-        background: rgba(122, 79, 249, 0.8);
-        color: #fff;
-        padding-block: 4px;
-        margin-block: -8px;
-        margin-inline: -8px;
-    }
-
-    nav p{
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 25px;
-        padding-inline: 20px;
-    }
-
-    nav p a{
-        color: #fff;
-        text-decoration: none;
-        padding-block: 10px;
-        margin-inline: 10px;
-    }
-
-    nav p a:hover{
-        background: rgb(236, 201, 136);
-        padding-block: 5px;
-        padding-inline: 10px;
-    }
-</style>
-<header>
-    <nav>
-        <p>
-            <a href="{{route('index')}}">Inicio</a>
-            <a href="{{route('products.index')}}">Productos</a>
-            <a href="{{route('clients.index')}}">Cliente</a>
-            <a href="{{route('sales.index')}}">Ventas</a>
-        </p>    
-    </nav>    
-</header>
-<br>
+<!-- Main content -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Dulces</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="{{route('index')}}" href="#">Index</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('products.index')}}">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('clients.index')}}">Clientes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('sales.index')}}">Ventas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
