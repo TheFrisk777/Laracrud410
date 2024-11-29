@@ -1,19 +1,16 @@
 @extends('layout.main_template')
 @section('content')
 <h2>Index Productos</h2>
-<br>
 <button>
     <a href="{{route('products.create')}}">Crear Producto</a>
 </button>
-<br>
 <button>
     <a href="{{route('brand.create')}}">Crear Marca</a>
 </button>
-<br>
 <button>
     <a href="{{route('brand.index')}}">Index Marcas</a>
 </button>
-<table>
+<table class="table table-striped">>
     <thead>
         <th>Nombre del Producto</th>
         <th>Marca</th>
@@ -33,7 +30,10 @@
             <td>{{$product->unit_price}}</td>
             <td><img src="/imagen/products/{{$product->imagen}}"width="60" alt="producto"></td>
             <td>
-                <button><a href="{{route('products.show',$product)}}">Mostrar</a></button>
+                <a class="btn btn-primary" href="{{route('products.show',$product)}}">
+                    <i class="fa-solid fa-plus"></i>
+                </a>
+                
                 <button><a href="{{route('products.edit',$product)}}">Editar</a></button>
                 <form action="{{route('products.destroy',$product)}}" method="POST">
                     @method("DELETE")
