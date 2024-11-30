@@ -64,7 +64,7 @@ class BrandController extends Controller
     {
         //
         $brand->update($request->all());
-        return to_route('brands.index')->with('status','Marca Actualizada');
+        return to_route('index')->with('status','Marca Actualizada');
     }
 
     /**

@@ -16,7 +16,7 @@ class ProductController extends Controller
     public function index()
     {
         //$products = Product::get();
-        $products = Product::paginate(4); // Paginar los resultados por 4 en 4
+        $products = Product::paginate(3); // Paginar los resultados por 4 en 4
         return view('admin.products.index', compact('products'));
     }
 
@@ -38,9 +38,7 @@ class ProductController extends Controller
         //dd($request);
         $data=$request->all();
         if(isset($data["imagen"])){
-            //Cambiar el nombre del archivo a cargar
             $data["imagen"]= $filename = time().".".$data["imagen"]->extension();
-            //Guardar Imagen en la Carpeta Publica
             $request->imagen->move(public_path("imagen/products"),$filename);
         }
         Product::create($data);
