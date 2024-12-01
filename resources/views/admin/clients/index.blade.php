@@ -4,11 +4,14 @@
 <h2>Index Cliente</h2>
 <br>
 <a type="button" class="btn btn-primary" a href="{{route('clients.create')}}">Crear Cliente</a>
+<a type="button" class="btn btn-primary" a href="{{route('addresses.index')}}">Index Direcciones</a>
+<a type="button" class="btn btn-primary" a href="{{route('addresses.create')}}">Crear Direcciones</a>
 <br>
 <br>
 <table class="table table-striped">
     <thead>
         <tr>
+            <th>id Cliente</th>
             <th>Nombre</th>
             <th>Primer Apellido</th>
             <th>Segundo Apellido</th>
@@ -20,6 +23,7 @@
     <tbody>
         @foreach ($clients as $client)
         <tr>
+            <td>{{$client->id}}</td>
             <td>{{$client->name}}</td>
             <td>{{$client->last_name}}</td>
             <td>{{$client->second_last_name}}</td>

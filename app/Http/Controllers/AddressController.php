@@ -14,6 +14,8 @@ class AddressController extends Controller
     public function index()
     {
         //
+        $addresses = Address::paginate(3); // Paginar los resultados por 4 en 4
+        return view('admin.addresses.index', compact('addresses'));
     }
 
     /**
@@ -22,6 +24,8 @@ class AddressController extends Controller
     public function create()
     {
         //
+        return view('admin.addresses.create');
+        
     }
 
     /**
@@ -29,7 +33,9 @@ class AddressController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    
+        Address::create($request->all()); // Crear la dirección
+        return to_route('addresses.index')->with('status', 'Dirección Registrada');
     }
 
     /**
@@ -38,6 +44,8 @@ class AddressController extends Controller
     public function show(Address $address)
     {
         //
+        //$address = Address::find($id);
+        return view('admin.addresses.show', compact('address'));
     }
 
     /**
@@ -46,6 +54,8 @@ class AddressController extends Controller
     public function edit(Address $address)
     {
         //
+        $addresses = Address::pluck('id', 'street'); // Obtener todas las direcciones
+        return view('admin.clients.edit', compact('address', 'addresses'));
     }
 
     /**
@@ -54,6 +64,8 @@ class AddressController extends Controller
     public function update(Request $request, Address $address)
     {
         //
+        $address->update($request->all()); // Actualizar cliente con datos validados
+        return to_route('clients.index')->with('status', 'Direccion Actualizada');
     }
 
     /**
@@ -62,5 +74,7 @@ class AddressController extends Controller
     public function destroy(Address $address)
     {
         //
+        $address->delete(); // Eliminar cliente
+        return to_route('clients.index')->with('status', 'Direccion Eliminada');
     }
 }

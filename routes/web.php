@@ -57,3 +57,5 @@ Route::resource('/clients',App\Http\Controllers\ClientController::class);
 Route::resource('/sales',App\Http\Controllers\SaleController::class);
 
 Route::get('/clients/{client}/delete',[App\Http\Controllers\ClientController::class, 'delete'])->name('client.delete');
+
+Route::resource('/addresses',App\Http\Controllers\AddressController::class);

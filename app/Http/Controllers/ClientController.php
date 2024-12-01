@@ -24,8 +24,8 @@ class ClientController extends Controller
     public function create()
     {
         //
-        $addresses = Address::pluck('id', 'street'); // Obtener direcciones disponibles
-        return view('admin.clients.create', compact('addresses'));
+        $clients = Client::pluck('name', 'id'); // Obtener clientes
+    return view('admin.clients.create', compact('clients'));
     }
 
     /**
@@ -34,15 +34,7 @@ class ClientController extends Controller
     public function store(Request $request)
     {
         //
-        $validatedData = $request->validate([
-            'name' => 'required|string|max:40',
-            'last_name' => 'required|string|max:40',
-            'second_last_name' => 'nullable|string|max:40',
-            'email' => 'required|email|max:50|unique:clients,email',
-            'phone' => 'nullable|numeric|min:10',
-        ]);
-
-        Client::create($validatedData); // Crear cliente con datos validados
+        Client::create($request->all()); // Crear cliente con datos validados
         return to_route('clients.index')->with('status', 'Cliente Registrado');
     }
 
