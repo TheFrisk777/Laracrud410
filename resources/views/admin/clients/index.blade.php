@@ -18,19 +18,25 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ($clients as $cli)
+        @foreach ($clients as $client)
         <tr>
-            <td>{{$cli->name}}</td>
-            <td>{{$cli->first_lastname}}</td>
-            <td>{{$cli->second_lastname}}</td>
-            <td>{{$cli->email}}</td>
-            <td>{{$cli->phone}}</td>
+            <td>{{$client->name}}</td>
+            <td>{{$client->last_name}}</td>
+            <td>{{$client->second_last_name}}</td>
+            <td>{{$client->email}}</td>
+            <td>{{$client->phone}}</td>
             <td>
-                <a href="{{route('client.edit',$cli)}}">Editar</a> |
-                <form action="{{route('client.destroy',$cli)}}" method="POST">
-                    @method('DELETE')
+                <a class="btn btn-primary" href="{{route('clients.show',$client)}}">
+                    <i class="fa-solid fa-plus"></i>
+                </a>
+
+                <a type="button" class="btn btn-warning" href="{{route('clients.edit',$client)}}">
+                    <i class="fa-solid fa-file-signature"></i>
+                </a>
+                <form action="{{route('clients.destroy',$client)}}" method="POST">
+                    @method("DELETE")
                     @csrf
-                    <button type="submit">Eliminar</button>
+                    <button type="button" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i></button>
                 </form>
             </td>
         </tr>

@@ -22,7 +22,10 @@ return new class extends Migration
             $table->string('country', 100)->nullable()->default('Mexico');
             $table->integer('postal_code')->unsigned()->nullable()->default(12);
             $table->string('references', 100)->nullable()->default('Other');
+            $table->foreignId('client_id');
             $table->timestamps();
+
+            $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

@@ -61,8 +61,9 @@ class ClientController extends Controller
     public function edit(Client $client)
     {
         //
-        $addresses = Address::pluck('id', 'street'); // Obtener todas las direcciones
-        return view('admin.clients.edit', compact('client', 'addresses'));
+        //$addresses = Address::pluck('id', 'street'); // Obtener todas las direcciones
+        //return view('admin.clients.edit', compact('client', 'addresses'));
+        return view('admin.clients.edit', compact('client'));
     }
 
     /**
@@ -81,6 +82,11 @@ class ClientController extends Controller
 
         $client->update($validatedData); // Actualizar cliente
         return to_route('clients.index')->with('status', 'Cliente Actualizado');
+    }
+
+    public function delete(Client $client)
+    {
+        echo view('admin.client.delete', compact('client'));
     }
 
     /**
