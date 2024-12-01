@@ -55,7 +55,7 @@ class AddressController extends Controller
     {
         //
         $addresses = Address::pluck('id', 'street'); // Obtener todas las direcciones
-        return view('admin.clients.edit', compact('address', 'addresses'));
+        return view('admin.addresses.edit', compact('address', 'addresses'));
     }
 
     /**
@@ -65,7 +65,7 @@ class AddressController extends Controller
     {
         //
         $address->update($request->all()); // Actualizar cliente con datos validados
-        return to_route('clients.index')->with('status', 'Direccion Actualizada');
+        return to_route('addresses.index')->with('status', 'Direccion Actualizada');
     }
 
     /**

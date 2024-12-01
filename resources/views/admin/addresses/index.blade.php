@@ -33,7 +33,19 @@
             <td>{{$address->country}}</td>
             <td>{{$address->postal_code}}</td>
             <td>{{$address->references}}</td>
-            <td></td>
+            <td>
+                <a class="btn btn-primary" href="{{route('addresses.show',$address)}}">
+                    <i class="fa-solid fa-plus"></i>
+                </a>
+                <a type="button" class="btn btn-warning" href="{{route('addresses.edit',$address)}}">
+                    <i class="fa-solid fa-file-signature"></i>
+                </a>
+                <form action="{{route('addresses.destroy',$address)}}" method="POST">
+                    @method("DELETE")
+                    @csrf
+                    <button type="button" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i></button>
+                </form>
+            </td>
         </tr>
         @endforeach
     </tbody>
