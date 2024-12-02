@@ -1,7 +1,7 @@
 @extends('layout.main_template')
 @section('content')
 <h2>Index Marcas</h2>
-<table>
+<table class="table table-striped">
 <thead>
     <th>Nombre de la Marca</th>
     <th>Descripcion</th>
@@ -13,12 +13,12 @@
             <td>{{$bra->brand}}</td>
             <td>{{$bra->description}}</td>
             <td>
-                <button><a href="{{route('brand.edit',$bra)}}">Editar</a></button>
-                <form action="{{route('brand.destroy',$bra)}}" method="POST">
-                    @method("DELETE")
-                    @csrf
-                    <button type="submit">Eliminar</button>
-                    </form>
+                <a type="button" class="btn btn-warning" href="{{route('brand.edit',$bra)}}">
+                    <i class="fa-solid fa-file-signature"></i>
+                </a>
+                <a type="button" class="btn btn-danger" href="{{route('brand.delete',$bra)}}">
+                    <i class="fa-solid fa-x"></i>
+                </a>
             </td>
         </tr>
     @endforeach

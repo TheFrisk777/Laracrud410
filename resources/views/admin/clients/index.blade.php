@@ -37,15 +37,15 @@
                 <a type="button" class="btn btn-warning" href="{{route('clients.edit',$client)}}">
                     <i class="fa-solid fa-file-signature"></i>
                 </a>
-                <form action="{{route('clients.destroy',$client)}}" method="POST">
-                    @method("DELETE")
-                    @csrf
-                    <button type="button" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i></button>
-                </form>
+                <a type="button" class="btn btn-danger" href="{{route('clients.delete',$client)}}">
+                    <i class="fa-solid fa-x"></i>
+                </a>
             </td>
         </tr>
         </tr>
         @endforeach
     </tbody>
 </table>
+
+{{$clients->links()}}
 @endsection

@@ -40,11 +40,9 @@
                 <a type="button" class="btn btn-warning" href="{{route('addresses.edit',$address)}}">
                     <i class="fa-solid fa-file-signature"></i>
                 </a>
-                <form action="{{route('addresses.destroy',$address)}}" method="POST">
-                    @method("DELETE")
-                    @csrf
-                    <button type="button" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i></button>
-                </form>
+                <a type="button" class="btn btn-danger" href="{{route('addresses.delete',$address)}}">
+                    <i class="fa-solid fa-x"></i>
+                </a>
             </td>
         </tr>
         @endforeach

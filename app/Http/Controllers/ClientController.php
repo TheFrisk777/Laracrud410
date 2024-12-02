@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Client;
 use Illuminate\Http\Request;
 use App\Models\Address;
+use App\Http\Requests\Clients\StoreRequest;
+use App\Http\Requests\Clients\UpdateRequest;
 
 class ClientController extends Controller
 {
@@ -31,7 +33,7 @@ class ClientController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
         //
         Client::create($request->all()); // Crear cliente con datos validados
@@ -61,24 +63,16 @@ class ClientController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Client $client)
+    public function update(UpdateRequest $request, Client $client)
     {
         //
-        $validatedData = $request->validate([
-            'name' => 'required|string|max:40',
-            'last_name' => 'required|string|max:40',
-            'second_last_name' => 'nullable|string|max:40',
-            'email' => 'required|email|max:50|unique:clients,email,' . $client->id,
-            'phone' => 'nullable|numeric|min:10',
-        ]);
-
-        $client->update($validatedData); // Actualizar cliente
+        $client->update($request->all()); // Actualizar cliente
         return to_route('clients.index')->with('status', 'Cliente Actualizado');
     }
 
     public function delete(Client $client)
     {
-        echo view('admin.client.delete', compact('client'));
+        echo view('admin.clients.delete', compact('client'));
     }
 
     /**

@@ -5,6 +5,15 @@
 @include('fragments.formstyles')
 
 <h1>Create de Brands</h1>
+
+@if ($errors->any())
+    @foreach ($errors->all() as $e)
+        <div class="error">
+            {{$e}}
+        </div>
+    @endforeach
+@endif
+
 <form action="{{route('brand.store')}}" method="POST">
     @csrf
         <label for="">Nombre de la Marca</label>

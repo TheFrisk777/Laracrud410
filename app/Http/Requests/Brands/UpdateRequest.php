@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Products;
+namespace App\Http\Requests\Brands;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -23,10 +23,8 @@ class UpdateRequest extends FormRequest
     {
         return [
             //
-            'nameProducts' => 'required|min:5|max:100',
-            'brand_id' => 'required|integer',
-            'stock' => 'required|integer',
-            'unit_price' => 'required|decimal:0,2',
+            'brand' => 'required|min:5|max:100',
+            'description' => 'required|min:5|max:100',
         ];
     }
 }

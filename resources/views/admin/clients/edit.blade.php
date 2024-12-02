@@ -5,6 +5,15 @@
 @include('fragments.formstyles')
 
 <h1>Editar Cliente</h1>
+
+@if ($errors->any())
+    @foreach ($errors->all() as $e)
+        <div class="error">
+            {{$e}}
+        </div>
+    @endforeach
+@endif
+
 <form action="{{route('clients.update',$client->id)}}" method="POST">
 @csrf
 @method('PUT')
