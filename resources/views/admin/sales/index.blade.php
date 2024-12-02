@@ -1,4 +1,6 @@
 @extends('layout.main_template')
 @section('content')
-<p>Index Ventas</p>
+<br>
+<h2 class="text-center">Lista de Ventas</h2>
+<br>
 @endsection
