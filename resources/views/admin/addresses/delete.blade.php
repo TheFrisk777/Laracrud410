@@ -7,8 +7,8 @@
 <form action="{{route("addresses.destroy",$address->id)}}" method="POST">
 @method("DELETE")
 @csrf
-<h3>¿Estas seguro que quieres eliminar el producto {{$address->street}}?</h3>
-<button><a href="{{route("addresses.index")}}">No</a></button>
-<button type="submit">Si</button>
+<h3>¿Quieres Eliminar esta Dirección: {{$address->street}}?</h3>
+<a type="button" class="btn btn-success" href="{{route("addresses.index")}}">No</a>
+<button type="button" class="btn btn-danger">Si</button>
 </form>
 @endsection

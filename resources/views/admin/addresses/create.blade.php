@@ -3,9 +3,9 @@
 @section('content')
 
 @include('fragments.formstyles')
-
-<h1>Creacion de Direcciones</h1>
-
+<br>
+<h1 class="text-center">Creacion de Direccion</h1>
+<br>
 @if ($errors->any())
     @foreach ($errors->all() as $e)
         <div class="error">

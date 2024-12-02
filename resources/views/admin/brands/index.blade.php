@@ -1,7 +1,9 @@
 @extends('layout.main_template')
 @section('content')
-<h2>Index Marcas</h2>
-<table class="table table-striped">
+<br>
+<h2 class="text-center">Lista de Marcas</h2>
+<br>
+<table class="table table-success table-striped-columns">
 <thead>
     <th>Nombre de la Marca</th>
     <th>Descripcion</th>

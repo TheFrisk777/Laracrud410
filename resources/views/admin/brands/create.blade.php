@@ -3,9 +3,9 @@
 @section('content')
 
 @include('fragments.formstyles')
-
-<h1>Create de Brands</h1>
-
+<br>
+<h1 class="text-center">Crear una Marca</h1>
+<br>
 @if ($errors->any())
     @foreach ($errors->all() as $e)
         <div class="error">

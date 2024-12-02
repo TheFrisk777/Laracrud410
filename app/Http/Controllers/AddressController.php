@@ -70,6 +70,10 @@ class AddressController extends Controller
         return to_route('addresses.index')->with('status', 'Direccion Actualizada');
     }
 
+    public function delete(Address $address)
+    {
+        echo view('admin.addresses.delete', compact('address'));
+    }
     /**
      * Remove the specified resource from storage.
      */

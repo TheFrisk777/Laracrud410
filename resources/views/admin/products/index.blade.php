@@ -1,14 +1,14 @@
 @extends('layout.main_template')
 @section('content')
 <br>
-<h2>Index Productos</h2>
+<h2 class="text-center">Lista de Productos</h2>
 <br>
 <a type="button" class="btn btn-primary" a href="{{route('products.create')}}">Crear Producto</a>
 <a type="button" class="btn btn-primary" href="{{route('brand.create')}}">Crear Marca</a>
 <a type="button" class="btn btn-primary" a href="{{route('brand.index')}}">Index Marcas</a>
 <br>
 <br>
-<table class="table table-striped">
+<table class="table table-success table-striped-columns">
     <thead>
         <th>Nombre del Producto</th>
         <th>Marca</th>

@@ -1,10 +1,10 @@
 @extends('layout.main_template')
 @section('content')
 <br>
-<h2>Index Address</h2>
+<h2 class="text-center">Lista de Direcciones</h2>
 <br>
 <br>
-<table class="table table-striped">
+<table class="table table-success table-striped-columns">
     <thead>
         <tr>
             <th>Id</th>

@@ -8,7 +8,7 @@
 @method("DELETE")
 @csrf
 <h3>¿Estas seguro que quieres eliminar el producto {{$client->name}}?</h3>
-<button><a href="{{route("clients.index")}}">No</a></button>
-<button type="submit">Si</button>
+<a type="button" class="btn btn-success" href="{{route("clients.index")}}">No</a>
+<button type="button" class="btn btn-danger">Si</button>
 </form>
 @endsection

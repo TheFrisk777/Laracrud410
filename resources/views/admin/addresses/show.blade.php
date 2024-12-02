@@ -1,8 +1,9 @@
 @extends('layout.main_template')
 
 @section('content')
-
-<h1>Detalles de la Dirección</h1>
+<br>
+<h1 class="text-center">Detalles de la Dirección</h1>
+<br>
 <h3>Calle: {{$address->street}}</h3>
 <h3>Num. Interior: {{$address->internal_num}}</h3>
 <h3>Num. Exterior: {{$address->external_num}}</h3>

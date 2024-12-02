@@ -3,9 +3,9 @@
 @section('content')
 
 @include('fragments.formstyles')
-
-<h1>Create de Productos</h1>
-
+<br>
+<h1 class="text-center">Añadir un Producto</h1>
+<br>
 @if ($errors->any())
     @foreach ($errors->all() as $e)
         <div class="error">
@@ -20,13 +20,14 @@
     <input type="text" name="nameProducts">
 
     <label for="">Marca</label>
+    <br>
     <select name="brand_id">
         <option value="">Selecciona...</option>
         @foreach ($brands as $brand=>$id)
         <option value="{{$id}}">{{$brand}}</option>
         @endforeach
     </select>
-    
+    <br>
     <label for="">Cantidad</label>
     <input type="number" name="stock">
 

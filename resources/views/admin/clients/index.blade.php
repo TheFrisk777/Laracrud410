@@ -1,14 +1,14 @@
 @extends('layout.main_template')
 @section('content')
 <br>
-<h2>Index Cliente</h2>
+<h2 class="text-center">Lista de Clientes</h2>
 <br>
 <a type="button" class="btn btn-primary" a href="{{route('clients.create')}}">Crear Cliente</a>
 <a type="button" class="btn btn-primary" a href="{{route('addresses.index')}}">Index Direcciones</a>
 <a type="button" class="btn btn-primary" a href="{{route('addresses.create')}}">Crear Direcciones</a>
 <br>
 <br>
-<table class="table table-striped">
+<table class="table table-success table-striped-columns">
     <thead>
         <tr>
             <th>id Cliente</th>

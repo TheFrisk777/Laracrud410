@@ -69,6 +69,11 @@ class BrandController extends Controller
         return to_route('index')->with('status','Marca Actualizada');
     }
 
+    public function delete(Brand $brand)
+    {
+        echo view('admin.brands.delete', compact('brand'));
+    }
+
     /**
      * Remove the specified resource from storage.
      */
@@ -76,6 +81,6 @@ class BrandController extends Controller
     {
         //
         $brand->delete();
-        return to_route('brands.index')->with('status','Marca Eliminada');
+        return to_route('brand.index')->with('status','Marca Eliminada');
     }
 }
