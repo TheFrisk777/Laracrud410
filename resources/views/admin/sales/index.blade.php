@@ -30,13 +30,9 @@
                 <a class="btn btn-warning" href="{{ route('sales.edit', $sale) }}">
                     <i class="fa-solid fa-file-signature"></i>
                 </a>
-                <form action="{{ route('sales.destroy', $sale) }}" method="POST" style="display:inline-block;">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de eliminar esta venta?')">
-                        <i class="fa-solid fa-trash"></i>
-                    </button>
-                </form>
+                <a type="button" class="btn btn-danger" href="{{route('sales.delete',$sale)}}">
+                    <i class="fa-solid fa-x"></i>
+                </a>
             </td>
         </tr>
         @endforeach
